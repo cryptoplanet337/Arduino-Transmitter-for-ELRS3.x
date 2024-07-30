@@ -23,7 +23,6 @@
  */
 
 #include <Arduino.h>
-#include <NonBlockingRtttl.h>
 #include "EEPROM.h"
 #include "config.h"
 #include "crsf.h"

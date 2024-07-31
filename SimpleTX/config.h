@@ -65,7 +65,7 @@ const int VOLTAGE_READ_PIN = A7;
 const int DIGITAL_PIN_SWITCH_ARM = 4;  // Arm switch
 const int DIGITAL_PIN_SWITCH_AUX2 = 3; //
 const int DIGITAL_PIN_SWITCH_AUX3 = 2;  //
-const int DIGITAL_PIN_SWITCH_AUX4 = 0;  // Set to 0 to disable this input
+const int DIGITAL_PIN_SWITCH_AUX4 = 6;  // Set to 0 to disable this input
 
 // pins that used for output
 const int DIGITAL_PIN_LED = 5;  

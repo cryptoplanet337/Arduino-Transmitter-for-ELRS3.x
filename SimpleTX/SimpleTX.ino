@@ -388,9 +388,8 @@ void setup()
     pinMode(DIGITAL_PIN_SWITCH_ARM, INPUT_PULLUP);
     pinMode(DIGITAL_PIN_SWITCH_AUX2, INPUT_PULLUP);
     pinMode(DIGITAL_PIN_SWITCH_AUX3, INPUT_PULLUP);
-    if (DIGITAL_PIN_SWITCH_AUX4 != 0){
-      pinMode(DIGITAL_PIN_SWITCH_AUX4, INPUT_PULLUP);
-    }
+    pinMode(DIGITAL_PIN_SWITCH_AUX4, INPUT_PULLUP);
+    
     pinMode(DIGITAL_PIN_LED, OUTPUT);    // LED
     pinMode(DIGITAL_PIN_BUZZER, OUTPUT); // BUZZER
 #ifdef PASSIVE_BUZZER
@@ -559,17 +558,15 @@ void loop()
     }
     AUX2_value = digitalRead(DIGITAL_PIN_SWITCH_AUX2);
     AUX3_value = digitalRead(DIGITAL_PIN_SWITCH_AUX3);
-    if (DIGITAL_PIN_SWITCH_AUX4 != 0){
-      AUX4_value = digitalRead(DIGITAL_PIN_SWITCH_AUX4);// reuse for LED
-    }
+    AUX4_value = digitalRead(DIGITAL_PIN_SWITCH_AUX4);
+
     
     // Aux Channels
     rcChannels[AUX1] = (AUX1_Arm == 1)   ? CRSF_DIGITAL_CHANNEL_MIN : CRSF_DIGITAL_CHANNEL_MAX;
     rcChannels[AUX2] = (AUX2_value == 1) ? CRSF_DIGITAL_CHANNEL_MIN : CRSF_DIGITAL_CHANNEL_MAX;
     rcChannels[AUX3] = (AUX3_value == 1) ? CRSF_DIGITAL_CHANNEL_MIN : CRSF_DIGITAL_CHANNEL_MAX;
-    if (DIGITAL_PIN_SWITCH_AUX4 != 0){
-      rcChannels[AUX4] = (AUX4_value == 1) ? CRSF_DIGITAL_CHANNEL_MIN : CRSF_DIGITAL_CHANNEL_MAX;
-    }
+    rcChannels[AUX4] = (AUX4_value == 1) ? CRSF_DIGITAL_CHANNEL_MIN : CRSF_DIGITAL_CHANNEL_MAX;
+
     if(stickInt=0){
         previous_throttle=rcChannels[THROTTLE];
         stickInt=1;
